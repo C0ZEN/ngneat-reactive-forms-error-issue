@@ -1,6 +1,10 @@
-  
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { FormControl, FormGroup, AbstractControl, AsyncValidatorFn } from '@ngneat/reactive-forms';
+import {
+  FormControl,
+  FormGroup,
+  AbstractControl,
+  AsyncValidatorFn
+} from '@ngneat/reactive-forms';
 import { Observable } from 'rxjs';
 import { of } from 'rxjs';
 
@@ -17,7 +21,7 @@ export class AppComponent {
   public form: FormGroup<IForm> = new FormGroup<IForm>({
     count: new FormControl<number | null>(
       8,
-      [],
+      undefined,
       this._getCountValidators()
     )
   });
