@@ -11,8 +11,9 @@
     "@angular/platform-browser": "^12.1.0",
     "@angular/platform-browser-dynamic": "^12.1.0",
     "@angular/router": "^12.1.0",
+    "@ngneat/reactive-forms": "^1.7.3",
     "core-js": "^3.15.1",
-    "rxjs": "^7.1.0",
+    "rxjs": "6.5.5",
     "tslib": "^2.3.0",
     "zone.js": "^0.11.4"
   },
