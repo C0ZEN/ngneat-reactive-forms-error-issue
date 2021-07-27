@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import {
   FormControl,
   FormGroup,
@@ -17,14 +17,24 @@ interface IForm {
   templateUrl: './app.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class AppComponent {
-  public form: FormGroup<IForm> = new FormGroup<IForm>({
-    count: new FormControl<number | null>(
-      8,
-      undefined,
-      this._getCountValidators()
-    )
-  });
+export class AppComponent implements OnInit {
+  public form: FormGroup<IForm> | undefined;
+  public error: unknown;
+
+  public ngOnInit(): void {
+    try {
+      this.form = new FormGroup<IForm>({
+        count: new FormControl<number | null>(
+          8,
+          undefined,
+          this._getCountValidators()
+        )
+      });
+    } catch (error) {
+      this.error = error;
+      console.error(error);
+    }
+  }
 
   private _getCountValidators(): AsyncValidatorFn[] {
     return [this._getCountValidator()];

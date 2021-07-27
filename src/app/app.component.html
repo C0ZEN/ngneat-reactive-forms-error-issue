@@ -5,5 +5,6 @@ Error: Cannot read property 'next' of undefined
 </pre>
 
 <p>Form</p>
-<p>Count value: {{ form.controls.count.value }}</p>
-<p>Count valid: {{ form.controls.count.valid }}</p>
+<p>Count value: {{ form?.controls.count.value }}</p>
+<p>Count valid: {{ form?.controls.count.valid }}</p>
+<p>{{ error }}</p>
