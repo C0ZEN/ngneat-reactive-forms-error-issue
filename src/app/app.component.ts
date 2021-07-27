@@ -16,8 +16,8 @@ interface IForm {
 export class AppComponent {
   public form: FormGroup<IForm> = new FormGroup<IForm>({
     count: new FormControl<number | null>(
-      null,
-      undefined,
+      8,
+      [],
       this._getCountValidators()
     )
   });
